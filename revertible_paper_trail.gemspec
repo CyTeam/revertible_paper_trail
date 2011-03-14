@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{revertible_paper_trail}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Simon H\303\274rlimann"]
@@ -45,6 +45,8 @@ Gem::Specification.new do |s|
     "spec/dummy/config/initializers/session_store.rb",
     "spec/dummy/config/locales/en.yml",
     "spec/dummy/config/routes.rb",
+    "spec/dummy/db/migrate/20110314091203_create_versions.rb",
+    "spec/dummy/db/schema.rb",
     "spec/dummy/public/404.html",
     "spec/dummy/public/422.html",
     "spec/dummy/public/500.html",
@@ -81,6 +83,8 @@ Gem::Specification.new do |s|
     "spec/dummy/config/initializers/secret_token.rb",
     "spec/dummy/config/initializers/session_store.rb",
     "spec/dummy/config/routes.rb",
+    "spec/dummy/db/migrate/20110314091203_create_versions.rb",
+    "spec/dummy/db/schema.rb",
     "spec/integration/navigation_spec.rb",
     "spec/revertible_paper_trail_spec.rb",
     "spec/spec_helper.rb"
@@ -91,28 +95,25 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["= 3.0.5"])
-      s.add_runtime_dependency(%q<capybara>, [">= 0.4.0"])
-      s.add_runtime_dependency(%q<sqlite3>, [">= 0"])
-      s.add_runtime_dependency(%q<rspec-rails>, [">= 2.0.0.beta"])
+      s.add_runtime_dependency(%q<revertible_paper_trail>, [">= 0"])
+      s.add_runtime_dependency(%q<rails>, ["~> 3.0.0"])
       s.add_runtime_dependency(%q<paper_trail>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_runtime_dependency(%q<paper_trail>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, ["= 3.0.5"])
-      s.add_dependency(%q<capybara>, [">= 0.4.0"])
-      s.add_dependency(%q<sqlite3>, [">= 0"])
-      s.add_dependency(%q<rspec-rails>, [">= 2.0.0.beta"])
+      s.add_dependency(%q<revertible_paper_trail>, [">= 0"])
+      s.add_dependency(%q<rails>, ["~> 3.0.0"])
       s.add_dependency(%q<paper_trail>, [">= 0"])
+      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<paper_trail>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, ["= 3.0.5"])
-    s.add_dependency(%q<capybara>, [">= 0.4.0"])
-    s.add_dependency(%q<sqlite3>, [">= 0"])
-    s.add_dependency(%q<rspec-rails>, [">= 2.0.0.beta"])
+    s.add_dependency(%q<revertible_paper_trail>, [">= 0"])
+    s.add_dependency(%q<rails>, ["~> 3.0.0"])
     s.add_dependency(%q<paper_trail>, [">= 0"])
+    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<paper_trail>, [">= 0"])
   end
