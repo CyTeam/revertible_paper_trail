@@ -1,13 +1,11 @@
 PATH
   remote: .
   specs:
-    revertible_paper_trail (0.1.0)
-      capybara (>= 0.4.0)
+    revertible_paper_trail (0.2.0)
       paper_trail
       paper_trail
-      rails (= 3.0.5)
-      rspec-rails (>= 2.0.0.beta)
-      sqlite3
+      rails (~> 3.0.0)
+      revertible_paper_trail
 
 GEM
   remote: http://rubygems.org/
