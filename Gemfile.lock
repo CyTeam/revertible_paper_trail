@@ -1,3 +1,14 @@
+PATH
+  remote: .
+  specs:
+    revertible_paper_trail (0.1.0)
+      capybara (>= 0.4.0)
+      paper_trail
+      paper_trail
+      rails (= 3.0.5)
+      rspec-rails (>= 2.0.0.beta)
+      sqlite3
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -116,9 +127,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara (>= 0.4.0)
+  capybara (~> 0.4)
   jeweler (~> 1.5.2)
   paper_trail
-  rails (= 3.0.5)
-  rspec-rails (>= 2.0.0.beta)
+  rails (~> 3.0.0)
+  revertible_paper_trail!
+  rspec (~> 2.0)
+  rspec-rails (~> 2.0)
   sqlite3
