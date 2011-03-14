@@ -6,6 +6,13 @@ gem "sqlite3"
 
 gem "rspec-rails", ">= 2.0.0.beta"
 
+group :development do
+  gem "jeweler", "~> 1.5.2"
+end
+
+# Revertible Paper Trail
+gem 'paper_trail'
+
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
 # gem 'ruby-debug19'
