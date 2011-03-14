@@ -11,7 +11,7 @@ module RevertiblePaperTrail
           when "create"
             item.destroy
           when "update"
-            previous.reify.save
+            reify.save
           when "destroy"
             reify.save
         end
