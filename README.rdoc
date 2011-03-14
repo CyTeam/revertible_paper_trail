@@ -1,3 +1,19 @@
 = RevertiblePaperTrail
 
-This project rocks and uses MIT-LICENSE.
+This project adds undo/redo functionality to PaperTrail.
+
+= Install
+
+In Rails 3, simply add
+
+ gem 'revertible_paper_trail'
+
+to your Gemfile.
+
+= License
+
+Copyright (c) 2011 CyT GmbH <info@cyt.ch>
+Copyright (c) 2011 Simon Hürlimann <simon.huerlimann@cyt.ch>
+Copyright (c) 2011 Roman Simecek <roman.simecek@cyt.ch>
+
+Released under the MIT license.
