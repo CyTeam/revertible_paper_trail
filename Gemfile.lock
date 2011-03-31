@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    revertible_paper_trail (0.2.0)
+    revertible_paper_trail (0.2.1)
       paper_trail
       paper_trail
       rails (~> 3.0.0)
