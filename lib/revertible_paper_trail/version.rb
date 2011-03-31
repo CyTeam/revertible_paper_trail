@@ -9,11 +9,11 @@ module RevertiblePaperTrail
       def revert
         case event
           when "create"
-            item.destroy
+            self.item.destroy
           when "update"
-            reify.save
+            self.reify.save
           when "destroy"
-            reify.save
+            self.reify.save
         end
       end
     end
