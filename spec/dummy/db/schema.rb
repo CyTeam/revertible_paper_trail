@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110314091203) do
+ActiveRecord::Schema.define(:version => 20110331092124) do
+
+  create_table "dummy_data", :force => true do |t|
+    t.string   "trailed_field"
+    t.string   "untrailed_field"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "versions", :force => true do |t|
     t.string   "item_type",  :null => false
