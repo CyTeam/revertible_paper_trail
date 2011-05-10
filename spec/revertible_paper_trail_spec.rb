@@ -10,7 +10,7 @@ describe RevertiblePaperTrail do
   end
 
   context "given a dummy_data object" do
-    let(:data) { DummyData.new }
+    let(:data) { build(:dummy_data) }
     
     context "when has been saved" do
       before do
