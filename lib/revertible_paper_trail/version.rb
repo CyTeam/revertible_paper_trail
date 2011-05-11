@@ -30,6 +30,32 @@ module RevertiblePaperTrail
 
         return latest_version.reify
       end
+
+      def current_item
+        return nil if event == 'destroy'
+
+        if self.next
+          self.next.reify
+        else
+          # Use active item as it should exist
+          self.item
+        end
+      end
+
+      def previous_item
+        case event
+          when "create"
+            nil
+          when "update"
+            current_item.previous_version
+          when "destroy"
+            reify
+        end
+      end
+
+      def versions
+        active_item.versions
+      end
     end
 
     module ClassMethods
