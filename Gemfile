@@ -2,7 +2,7 @@
 # ========
 source :rubygems
 
-gemspec
+#gemspec
 
 group :development do
   gem "jeweler", "~> 1.5.2"
