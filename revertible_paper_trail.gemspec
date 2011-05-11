@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{revertible_paper_trail}
-  s.version = "0.2.1"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Simon H\303\274rlimann"]
-  s.date = %q{2011-03-31}
+  s.date = %q{2011-05-11}
   s.description = %q{This project adds undo/redo functionality to PaperTrail}
   s.email = %q{simon.huerlimann@cyt.ch}
   s.extra_rdoc_files = [
@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
     "spec/dummy/Rakefile",
     "spec/dummy/app/controllers/application_controller.rb",
     "spec/dummy/app/helpers/application_helper.rb",
+    "spec/dummy/app/models/dummy_data.rb",
     "spec/dummy/app/views/layouts/application.html.erb",
     "spec/dummy/config.ru",
     "spec/dummy/config/application.rb",
@@ -46,6 +47,7 @@ Gem::Specification.new do |s|
     "spec/dummy/config/locales/en.yml",
     "spec/dummy/config/routes.rb",
     "spec/dummy/db/migrate/20110314091203_create_versions.rb",
+    "spec/dummy/db/migrate/20110331092124_create_dummy_data.rb",
     "spec/dummy/db/schema.rb",
     "spec/dummy/public/404.html",
     "spec/dummy/public/422.html",
@@ -59,6 +61,7 @@ Gem::Specification.new do |s|
     "spec/dummy/public/javascripts/rails.js",
     "spec/dummy/public/stylesheets/.gitkeep",
     "spec/dummy/script/rails",
+    "spec/factories/dummy_data.rb",
     "spec/integration/navigation_spec.rb",
     "spec/revertible_paper_trail_spec.rb",
     "spec/spec_helper.rb"
@@ -66,11 +69,12 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/CyTeam/revertible_paper_trail}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Undo/Redo functionality for Paper Trail}
   s.test_files = [
     "spec/dummy/app/controllers/application_controller.rb",
     "spec/dummy/app/helpers/application_helper.rb",
+    "spec/dummy/app/models/dummy_data.rb",
     "spec/dummy/config/application.rb",
     "spec/dummy/config/boot.rb",
     "spec/dummy/config/environment.rb",
@@ -84,7 +88,9 @@ Gem::Specification.new do |s|
     "spec/dummy/config/initializers/session_store.rb",
     "spec/dummy/config/routes.rb",
     "spec/dummy/db/migrate/20110314091203_create_versions.rb",
+    "spec/dummy/db/migrate/20110331092124_create_dummy_data.rb",
     "spec/dummy/db/schema.rb",
+    "spec/factories/dummy_data.rb",
     "spec/integration/navigation_spec.rb",
     "spec/revertible_paper_trail_spec.rb",
     "spec/spec_helper.rb"
@@ -94,31 +100,34 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<revertible_paper_trail>, [">= 0"])
       s.add_runtime_dependency(%q<rails>, ["~> 3.0.0"])
-      s.add_runtime_dependency(%q<paper_trail>, [">= 0"])
+      s.add_runtime_dependency(%q<paper_trail>, ["~> 2.2"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_runtime_dependency(%q<paper_trail>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_runtime_dependency(%q<paper_trail>, ["~> 2.2"])
     else
       s.add_dependency(%q<revertible_paper_trail>, [">= 0"])
       s.add_dependency(%q<rails>, ["~> 3.0.0"])
-      s.add_dependency(%q<paper_trail>, [">= 0"])
+      s.add_dependency(%q<paper_trail>, ["~> 2.2"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_dependency(%q<paper_trail>, [">= 0"])
+      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_dependency(%q<paper_trail>, ["~> 2.2"])
     end
   else
     s.add_dependency(%q<revertible_paper_trail>, [">= 0"])
     s.add_dependency(%q<rails>, ["~> 3.0.0"])
-    s.add_dependency(%q<paper_trail>, [">= 0"])
+    s.add_dependency(%q<paper_trail>, ["~> 2.2"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-    s.add_dependency(%q<paper_trail>, [">= 0"])
+    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+    s.add_dependency(%q<paper_trail>, ["~> 2.2"])
   end
 end
 
