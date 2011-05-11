@@ -30,4 +30,4 @@ gem 'rails', '~> 3.0.0'
 
 # Revertible Paper Trail
 # ======================
-gem 'paper_trail'
+gem 'paper_trail', '~> 2.2'
