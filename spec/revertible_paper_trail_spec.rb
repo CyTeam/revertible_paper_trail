@@ -18,12 +18,36 @@ describe RevertiblePaperTrail do
         @created_version = data.versions.last
       end
      
-      it "should destroy the version" do
+      it "should revert create" do
         data_id = data.id
 
         @created_version.revert
         
         DummyData.exists?(data_id).should be_false
+      end
+      
+      it "should revert update" do
+        data = create(:dummy_data, :trailed_field => 'orig', :untrailed_field => 'orig')
+        
+        data.trailed_field = 'new'
+        data.save!
+        
+        latest_version = data.versions.last
+        latest_version.revert
+        
+        data.reload
+        data.trailed_field.should == 'orig'
+      end
+
+      it "should revert destroy" do
+        data = create(:dummy_data, :trailed_field => 'orig', :untrailed_field => 'orig')
+        
+        data.destroy
+        
+        latest_version = data.versions.last
+        latest_version.revert
+        
+        DummyData.exists?(data.id).should be_true
       end
     end
   end
