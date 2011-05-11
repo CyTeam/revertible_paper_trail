@@ -9,6 +9,9 @@ module RevertiblePaperTrail
       def revert
         case event
           when "create"
+            # Do nothing if item already destroyed again
+            return unless self.item
+            
             self.item.destroy
           when "update"
             self.reify.save

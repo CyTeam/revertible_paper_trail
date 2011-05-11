@@ -49,6 +49,17 @@ describe RevertiblePaperTrail do
         
         DummyData.exists?(data.id).should be_true
       end
+
+      it "should do nothing on revert create of an already destroyed item" do
+        data = create(:dummy_data, :trailed_field => 'orig', :untrailed_field => 'orig')
+        
+        data.destroy
+        
+        first_version = data.versions.first
+        first_version.revert
+
+        DummyData.exists?(data.id).should be_false
+      end
     end
   end
 end
