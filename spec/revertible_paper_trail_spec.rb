@@ -54,4 +54,33 @@ describe RevertiblePaperTrail do
       DummyData.exists?(data.id).should be_false
     end
   end
+
+  context ".active_item" do
+    it "should return current item if it exists" do
+      data = create(:dummy_data, :trailed_field => 'orig', :untrailed_field => 'orig')
+      
+      latest_version = data.versions.last
+
+      latest_version.active_item.should == data
+    end
+
+    it "should return latest destroyed version if no current item exists" do
+      data = create(:dummy_data, :trailed_field => 'orig', :untrailed_field => 'orig')
+      
+      # Do an update
+      data.trailed_field = 'new'
+      data.save
+      # remember this version
+      first_version = data.versions.last
+
+      # Destroy
+      data.destroy
+      # remember this version
+      latest_version = data.versions.last
+
+      # 
+      first_version.active_item.trailed_field.should == 'new'
+      latest_version.active_item.trailed_field.should == 'new'
+    end
+  end
 end

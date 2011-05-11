@@ -19,6 +19,17 @@ module RevertiblePaperTrail
             self.reify.save
         end
       end
+
+      def active_item
+        # Fast track if item currently exists
+        active_item = item
+        return active_item if active_item
+
+        # Take latest and reify
+        latest_version = self.class.subsequent(self).last || self
+
+        return latest_version.reify
+      end
     end
 
     module ClassMethods
