@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{revertible_paper_trail}
+  s.name = "revertible_paper_trail"
   s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Simon H\303\274rlimann"]
-  s.date = %q{2011-05-11}
-  s.description = %q{This project adds undo/redo functionality to PaperTrail}
-  s.email = %q{simon.huerlimann@cyt.ch}
+  s.authors = ["Simon H\u{fc}rlimann"]
+  s.date = "2012-08-31"
+  s.description = "This project adds undo/redo functionality to PaperTrail"
+  s.email = "simon.huerlimann@cyt.ch"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -66,54 +66,30 @@ Gem::Specification.new do |s|
     "spec/revertible_paper_trail_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/CyTeam/revertible_paper_trail}
+  s.homepage = "http://github.com/CyTeam/revertible_paper_trail"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.0}
-  s.summary = %q{Undo/Redo functionality for Paper Trail}
-  s.test_files = [
-    "spec/dummy/app/controllers/application_controller.rb",
-    "spec/dummy/app/helpers/application_helper.rb",
-    "spec/dummy/app/models/dummy_data.rb",
-    "spec/dummy/config/application.rb",
-    "spec/dummy/config/boot.rb",
-    "spec/dummy/config/environment.rb",
-    "spec/dummy/config/environments/development.rb",
-    "spec/dummy/config/environments/production.rb",
-    "spec/dummy/config/environments/test.rb",
-    "spec/dummy/config/initializers/backtrace_silencers.rb",
-    "spec/dummy/config/initializers/inflections.rb",
-    "spec/dummy/config/initializers/mime_types.rb",
-    "spec/dummy/config/initializers/secret_token.rb",
-    "spec/dummy/config/initializers/session_store.rb",
-    "spec/dummy/config/routes.rb",
-    "spec/dummy/db/migrate/20110314091203_create_versions.rb",
-    "spec/dummy/db/migrate/20110331092124_create_dummy_data.rb",
-    "spec/dummy/db/schema.rb",
-    "spec/factories/dummy_data.rb",
-    "spec/integration/navigation_spec.rb",
-    "spec/revertible_paper_trail_spec.rb",
-    "spec/spec_helper.rb"
-  ]
+  s.rubygems_version = "1.8.23"
+  s.summary = "Undo/Redo functionality for Paper Trail"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["~> 3.0.0"])
+      s.add_runtime_dependency(%q<rails>, ["~> 3.0"])
       s.add_runtime_dependency(%q<paper_trail>, ["~> 2.2"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<paper_trail>, ["~> 2.2"])
     else
-      s.add_dependency(%q<rails>, ["~> 3.0.0"])
+      s.add_dependency(%q<rails>, ["~> 3.0"])
       s.add_dependency(%q<paper_trail>, ["~> 2.2"])
-      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<paper_trail>, ["~> 2.2"])
     end
   else
-    s.add_dependency(%q<rails>, ["~> 3.0.0"])
+    s.add_dependency(%q<rails>, ["~> 3.0"])
     s.add_dependency(%q<paper_trail>, ["~> 2.2"])
-    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<paper_trail>, ["~> 2.2"])
   end
 end
