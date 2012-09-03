@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "revertible_paper_trail"
-  s.version = "0.3.1"
+  s.version = "0.3.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Simon H\u{fc}rlimann"]
-  s.date = "2012-08-31"
+  s.date = "2012-09-03"
   s.description = "This project adds undo/redo functionality to PaperTrail"
   s.email = "simon.huerlimann@cyt.ch"
   s.extra_rdoc_files = [
