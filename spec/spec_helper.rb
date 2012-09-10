@@ -26,7 +26,7 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 require 'factory_girl'
 Dir["#{File.dirname(__FILE__)}/factories/**/*.rb"].each { |f| require f }
 RSpec.configure do |config|
-  config.include Factory::Syntax::Methods
+  config.include FactoryGirl::Syntax::Methods
 end
   
 RSpec.configure do |config|
