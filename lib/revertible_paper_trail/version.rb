@@ -17,14 +17,8 @@ module RevertiblePaperTrail
     end
 
     def active_item
-      # Fast track if item currently exists
-      active_item = item
-      return active_item if active_item
-
-      # Take latest and reify
-      latest_version = self.class.subsequent(self).last || self
-
-      return latest_version.reify
+      # Take current item or reify latest version
+      item || versions.last.reify
     end
 
     def current_item
@@ -50,7 +44,7 @@ module RevertiblePaperTrail
     end
 
     def versions
-      active_item.versions
+      sibling_versions
     end
   end
 end
