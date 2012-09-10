@@ -66,7 +66,7 @@ describe RevertiblePaperTrail do
 
     it "should return latest destroyed version if no current item exists" do
       data = create(:dummy_data, :trailed_field => 'orig', :untrailed_field => 'orig')
-      
+
       # Do an update
       data.trailed_field = 'new'
       data.save
@@ -78,9 +78,21 @@ describe RevertiblePaperTrail do
       # remember this version
       latest_version = data.versions.last
 
-      # 
       first_version.active_item.trailed_field.should == 'new'
       latest_version.active_item.trailed_field.should == 'new'
+    end
+
+    it "should not return version for other items if no current item exists" do
+      data = create(:dummy_data, :trailed_field => 'orig', :untrailed_field => 'orig')
+
+      # Destroy
+      data.destroy
+      # remember this version
+      data_version = data.versions.last
+
+      create(:dummy_data, :trailed_field => 'other', :untrailed_field => 'other')
+
+      data_version.active_item.trailed_field.should == 'orig'
     end
   end
 end
